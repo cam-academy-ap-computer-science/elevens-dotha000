@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Random;
 import java.util.ArrayList;
 
 /**
@@ -63,6 +64,16 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		int rand = 0;
+		Card temp = new Card("","",0);
+		Random r = new Random();
+		for (int k = cards.size() - 1; k >= 0; k--) {
+			rand = r.nextInt(k+1);
+			temp = cards.get(rand);
+			cards.set(rand, cards.get(k));
+			cards.set(k, temp);
+		}
+		size = 52;
 	}
 
 	/**
